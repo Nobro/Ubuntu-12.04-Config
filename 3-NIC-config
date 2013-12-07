@@ -22,7 +22,7 @@ iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
 sudo iptables-save | sudo tee /etc/iptables.sav
 vim /etc/rc.local
 #add before exit 0 line
-#iptables_restore < iptables.sav
+#iptables-restore < iptables.sav
 #ip addr add 10.0.0.1/26 broadcast 10.0.0.63 dev eth0
 #ip addr add 10.0.1.1/26 broadcast 10.0.1.63 dev eth2
 sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"  #set port forwarding for ipv4
