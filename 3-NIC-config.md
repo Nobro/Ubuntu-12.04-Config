@@ -1,18 +1,15 @@
 #Basic Ubuntu 12.04 3NIC Config
 
---------------------------
-                   ____                                  ____                                                              
-                  |    |            192.168.1.50/24     |    |      10.0.1.1/26                                                     
-             WAN--| AP |---------------------------eth1-|SRV |-eth2----------                                          
-                  |____|                                |____|                                                           
-                                                          |                                                            
-                                                        eth0                                                           
-                                                          | 10.0.0.1/26                                                
-                                                          |                                                            
+              ____                                  ____                                                              
+             |    |            192.168.1.50/24     |    |      10.0.1.1/26                                                     
+        WAN--| AP |---------------------------eth1-|SRV |-eth2----------                                          
+             |____|                                |____|                                                           
+                                                     |                                                            
+                                                   eth0                                                           
+                                                     | 10.0.0.1/26                                                
+                                                     |                                                            
                                                                                                                        
---------------------------
-
-~~~
+* * * *
 
 sudo su
 
@@ -36,13 +33,13 @@ vim /etc/rc.local
 
 ~~~
 
->//add before exit 0 line
+//add before exit 0 line
 
->iptables-restore < /etc/iptables.sav
+iptables-restore < /etc/iptables.sav
 
->ip addr add 10.0.0.1/26 broadcast 10.0.0.63 dev eth0
+ip addr add 10.0.0.1/26 broadcast 10.0.0.63 dev eth0
 
->ip addr add 10.0.1.1/26 broadcast 10.0.1.63 dev eth2
+ip addr add 10.0.1.1/26 broadcast 10.0.1.63 dev eth2
 
 ~~~
 
@@ -52,7 +49,9 @@ vim /etc/sysctl.conf
 
 ~~~
 
->uncoment net.ip4.ip_forward=1
+//uncoment this line
+
+net.ip4.ip_forward=1
 
 ~~~
 
@@ -64,13 +63,13 @@ vim /etc/dnsmasq.conf
 
 ~~~
 
->//add and uncomment accordingly
+//add and uncomment accordingly
 
->except-interface=eth1 #dhcp to all interfaces except eth1
+except-interface=eth1 #dhcp to all interfaces except eth1
 
->dhcp-range=eth0,10.0.0.10,10.0.0.20,72h #eth0 is not neaded but it is nice for future revisions
+dhcp-range=eth0,10.0.0.10,10.0.0.20,72h #eth0 is not neaded but it is nice for future revisions
 
->dhcp-range=eth2,10.0.1.10,10.0.1.20,72h #eth2 is not neaded but it is nice for future revisions
+dhcp-range=eth2,10.0.1.10,10.0.1.20,72h #eth2 is not neaded but it is nice for future revisions
 
 ~~~
 
@@ -78,12 +77,4 @@ vim /etc/dnsmasq.conf
 
 reboot
 
-~~~
-
-//test ip addr show
-
-
-
-
-
-
+ip addr show //test
