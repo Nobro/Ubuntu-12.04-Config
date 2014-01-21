@@ -1,13 +1,13 @@
 #Basic Ubuntu 12.04 3NIC Config
 
-              ____                                  ____                                                              
-             |    |            192.168.1.50/24     |    |      10.0.1.1/26                                                     
-        WAN--| AP |---------------------------eth1-|SRV |-eth2----------                                          
+              ____                                  ____
+             |    |            192.168.1.50/24     |    |      10.0.1.1/26
+        WAN--| AP |---------------------------eth1-|SRV |-eth2----------
              |____|                                |____|                                                           
-                                                     |                                                            
-                                                   eth0                                                           
-                                                     | 10.0.0.1/26                                                
-                                                     |                                                            
+                                                     |
+                                                   eth0   
+                                                     | 10.0.0.1/26
+                                                     |
                                                                                                                        
 * * * *
 
@@ -23,7 +23,7 @@ iptables -A FORWARD -o eth1 -i eth2 -s 10.0.1.1/26 -m conntrack --ctstate NEW -j
 
 iptables -A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
-iptables -t nat -F POSTROUTING # Flushes Postrouting to make sure no other rules will interfere just in case
+iptables -t nat -F POSTROUTING # OPTIONAL Flushes Postrouting to make sure no other rules will interfere just in case
 
 iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
 
