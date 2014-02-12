@@ -29,8 +29,7 @@ vim .i3/config
 
 #just the differences from the default config file
 
-set $Mod Mod4 #Win keycolor12
-         (bright blue)
+set $Mod Mod4 #Win key
 
 #start XFCE panel
 bindsym $mod+z exec --no-startup-id xfce4-panel
@@ -64,13 +63,13 @@ bar {
       font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
       colors {
-	background #000000
-	statusline #ffffff
-	separator  #00d700
-	focus_workspace    #ffffff #00D700
-	active_workspace   #ffffff #333333
-	inactive_workspace #888888 #222222
-	urgent_workspace   #ffffff #900000      
+        background #000000
+        statusline #ffffff
+        separator  #00d700
+        focus_workspace    #ffffff #00D700
+        active_workspace   #ffffff #333333
+        inactive_workspace #888888 #222222
+        urgent_workspace   #ffffff #900000      
       }  
 }
 
