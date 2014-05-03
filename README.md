@@ -1,4 +1,4 @@
-Ubuntu-12.04-Config
+Ubuntu
 ===================
 
-Ubuntu 12.04 Config Files
+Config Files
