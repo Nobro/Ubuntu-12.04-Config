@@ -75,7 +75,7 @@ bar {
 
 ~~~
 
-vim .i3status.config
+vim ~/.i3status.conf
 
 ~~~
 
