@@ -23,7 +23,7 @@ URxvt*scrollstyle: rxvt
 
 ~~~
 
-vim .i3/config
+vim ~/.i3/config
 
 ~~~
 
