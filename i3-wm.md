@@ -66,7 +66,7 @@ bar {
         background #000000
         statusline #ffffff
         separator  #00d700
-        focus_workspace    #ffffff #00D700
+        focused_workspace    #ffffff #00D700
         active_workspace   #ffffff #333333
         inactive_workspace #888888 #222222
         urgent_workspace   #ffffff #900000      
