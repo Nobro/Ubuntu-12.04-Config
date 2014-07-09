@@ -43,7 +43,7 @@ bindsym $mod+x exec urxvt
 bindsym $mod+c kill
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exit
+bindsym $mod+Shift+e exit
 
 # frame colors          border  backgr. text    indicator
 client.focused          #00D700 #007300 #ffffff #00ff00
